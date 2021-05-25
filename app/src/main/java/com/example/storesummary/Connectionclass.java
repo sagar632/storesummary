@@ -16,7 +16,7 @@ public class Connectionclass {
     private static Connection conn;
 public static Connection connect(){
 
-    ip="192.168.254.101";
+    ip="";
     port="1433";
     username= "testc";
     password="testc";
