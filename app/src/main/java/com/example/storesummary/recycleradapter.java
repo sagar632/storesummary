@@ -45,15 +45,15 @@ public class recycleradapter extends RecyclerView.Adapter<recycleradapter.holder
         holder.bind(balanaces.get(position),listener);
         holder.name.setText(name);
         if(doc.equals("DR")){
-            holder.balance.setTextColor(Color.RED);
+            holder.balance.setTextColor(Color.BLACK);
             DecimalFormat form =new DecimalFormat("##,##,##,##,###.##");
 
-            holder.balance.setText("Nrs "+form.format(balance));
+            holder.balance.setText("Dr. "+form.format(balance));
 
         }
         else{
-            holder.balance.setTextColor(Color.parseColor("#FF086D0B")); DecimalFormat form =new DecimalFormat("##,##,##,##,###.##");
-            holder.balance.setText( "Nrs "+form.format(balance));
+            holder.balance.setTextColor(Color.BLACK); DecimalFormat form =new DecimalFormat("##,##,##,##,###.##");
+            holder.balance.setText( "Cr. "+form.format(balance));
         }
     }
 

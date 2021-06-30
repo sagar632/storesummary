@@ -42,7 +42,9 @@ public class MainActivity extends AppCompatActivity {
 
 private  ProgressDialog progressDialog;
     private Connection connection = null;
-
+public static String datname=null;
+    public static String use=null,ms;
+    public static String pas=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -52,12 +54,17 @@ private  ProgressDialog progressDialog;
       credit=findViewById(R.id.credit);
       debit=findViewById(R.id.debit);
 viewPager=findViewById(R.id.fragmentcontainer);
+Intent intent=getIntent();
 
-
+setDatname(intent.getStringExtra("dataname"));
+setUse(intent.getStringExtra("username"));
+setPas(intent.getStringExtra("password"));Log.d("ere","jfkjdfjkdkdfk");
         progressDialog=new ProgressDialog(MainActivity.this);
         progressDialog.setMessage("Connecting");
         progressDialog.show();
-connection=Connectionclass.connect();
+         ms=intent.getStringExtra("username");
+        Log.d("fromf",ms);
+connection=Connectionclass.connect("192.168.254.95","1433",getUse(),getPas(),getDatname());
 
 if(isOnline()) {
     if (connection != null) {
@@ -151,6 +158,22 @@ onchangetab(position);
         return true;
     }
 
+    public static String getUse() {
+        return use;
+    }
+
+    public void setUse(String use) {
+        this.use = use;
+    }
+
+    public static String getPas() {
+        return pas;
+    }
+
+    public void setPas(String pas) {
+        this.pas = pas;
+    }
+
     private void onchangetab(int position) {
         if(position==0){
             all.setTextSize(25);
@@ -193,5 +216,13 @@ onchangetab(position);
     protected void onResume() {
         super.onResume();
         connection=null;
+    }
+
+    public static String getDatname() {
+        return datname;
+    }
+
+    public void setDatname(String datname) {
+        this.datname = datname;
     }
 }

@@ -14,13 +14,13 @@ public class Connectionclass {
     private  static String ip,port,database,username,password,url;
     private static String classes="net.sourceforge.jtds.jdbc.Driver";
     private static Connection conn;
-public static Connection connect(){
+public static Connection connect(String gip,String gport,String gusername,String gpassword,String gdatabase){
 
-    ip="";
+    ip="192.168.254.178";
     port="1433";
-    username= "testc";
-    password="testc";
-    database="Ac_DristiAuto7778";
+    username= gusername;
+    password=gpassword;
+    database=gdatabase;
 
     StrictMode.ThreadPolicy policy= new StrictMode.ThreadPolicy.Builder().permitAll().build();
     StrictMode.setThreadPolicy(policy);
@@ -43,5 +43,6 @@ public static Connection connect(){
 
     return conn;
 }
+
 
 }

@@ -34,7 +34,7 @@ private Connection conn=null;
        View v=inflater.inflate(R.layout.all,null);
         final List<model.balance> balncelist  =new ArrayList<>();
         Connectionclass connectionclass=new Connectionclass();
-        conn=connectionclass.connect();
+        conn=connectionclass.connect("192.168.254.95","1433","testc","testc","Ac_DristiAuto7778");
         if(conn!=null){
             Statement statement=null;
 

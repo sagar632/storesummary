@@ -43,9 +43,9 @@ holder.date.setText("Billing Date: "+date);
 holder.remarks.setText("Remarks: "+remmarks);
 if(drbalaane!=0){
 
-    holder.crdr.setTextColor(Color.RED);
+    holder.crdr.setTextColor(Color.BLACK);
     DecimalFormat format=new DecimalFormat("#.##");
-    holder.crdr.setText("Nrs "+format.format(drbalaane));
+    holder.crdr.setText("Dr. "+format.format(drbalaane));
 
 
 
@@ -54,15 +54,15 @@ if(drbalaane!=0){
 
 
 else if(crbalance!=0){
-    holder.crdr.setTextColor(Color.parseColor("#FF086D0B"));
+    holder.crdr.setTextColor((Color.BLACK));
     DecimalFormat format=new DecimalFormat("##,##,##,##,###.##");
-    holder.crdr.setText("Nrs "+format.format(crbalance));
+    holder.crdr.setText("Cr. "+format.format(crbalance));
 
 }
 else{
-    holder.crdr.setTextColor(Color.GRAY);
+    holder.crdr.setTextColor(Color.BLACK);
     DecimalFormat format=new DecimalFormat("##,##,##,##,###.##");
-    holder.crdr.setText("Nrs "+format.format(crbalance));
+    holder.crdr.setText("Nill ");
 }
     }
 

@@ -64,7 +64,7 @@ private ProgressDialog progressDialog
        progressDialog.setMessage("Connecting");
 
         Connectionclass connectionclass=new Connectionclass();
-        conn=connectionclass.connect(); final List<balance> balncelist  =new ArrayList<>();
+        conn=connectionclass.connect("192.168.254.95","1433",MainActivity.getUse(),MainActivity.getPas(),MainActivity.getDatname()); final List<balance> balncelist  =new ArrayList<>();
         if(isonline()) {
             if (conn != null) {
                 progressDialog.dismiss();

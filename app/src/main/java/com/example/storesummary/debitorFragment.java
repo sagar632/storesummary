@@ -36,7 +36,7 @@ public class debitorFragment extends Fragment {
 
         final List<balance> balncelist  =new ArrayList<>();
         Connectionclass connectionclass=new Connectionclass();
-        conn=connectionclass.connect();
+        conn=connectionclass.connect("192.168.254.95","1433",MainActivity.getUse(),MainActivity.getPas(),MainActivity.getDatname());
         if(conn!=null){
             Statement statement=null;
 
